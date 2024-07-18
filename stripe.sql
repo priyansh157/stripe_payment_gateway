@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 01, 2023 at 08:46 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Generation Time: Jul 18, 2024 at 08:21 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,45 +18,43 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `stripenew`
+-- Database: `stripe`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `registration`
+-- Table structure for table `stripe_payment`
 --
 
-CREATE TABLE `registration` (
+CREATE TABLE `stripe_payment` (
   `id` int(11) NOT NULL,
   `name` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `coursename` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `fees` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `card_number` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `card_expirymonth` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `card_expiryyear` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `paymentid` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `added_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `registration`
+-- Dumping data for table `stripe_payment`
 --
 
-INSERT INTO `registration` (`id`, `name`, `email`, `coursename`, `fees`, `card_number`, `card_expirymonth`, `card_expiryyear`, `status`, `paymentid`, `added_date`) VALUES
-(1, 'Rakesh kumar', 'krrakesh014@gmail.com', 'Web Development Expert', '200', '4242424242424242', '08', '28', 'succeeded', 'txn_3NlQKbL3hyAk7Kt217i16cS8', '2023-09-01 07:55:47'),
-(2, 'Rahul Goyal', 'rahul@gmail.com', 'Web Development Expert', '300', '4242424242424242', '08', '30', 'succeeded', 'ch_3NlQNFL3hyAk7Kt200722MD3', '2023-09-01 07:58:30');
+INSERT INTO `stripe_payment` (`id`, `name`, `email`, `coursename`, `fees`, `status`, `paymentid`, `added_date`) VALUES
+(1, 'rahul', 'rahuk@gmail.com', 'gk', '244', 'succeeded', 'ch_3PdpmM2LDHX8Nxpi0LViEoFf', '2024-07-18 10:33:35'),
+(4, 'Karan', 'karan@gmail.com', 'Science', '566', 'succeeded', 'pi_3PdyV02LDHX8Nxpi0goIyT11', '2024-07-18 23:22:14'),
+(5, 'Nayan', 'nayan@gmail.com', 'french', '666', 'succeeded', 'pi_3PdyX62LDHX8Nxpi06yKZ00V', '2024-07-18 23:24:24');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `registration`
+-- Indexes for table `stripe_payment`
 --
-ALTER TABLE `registration`
+ALTER TABLE `stripe_payment`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -65,10 +62,10 @@ ALTER TABLE `registration`
 --
 
 --
--- AUTO_INCREMENT for table `registration`
+-- AUTO_INCREMENT for table `stripe_payment`
 --
-ALTER TABLE `registration`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `stripe_payment`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
